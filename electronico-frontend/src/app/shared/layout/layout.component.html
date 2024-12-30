@@ -1,0 +1,52 @@
+<div class="example-container">
+    <div>
+        <mat-toolbar color="warn">
+            <button class="btn-togle" mat-icon-button (click)="sidenav.toggle()">
+                <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
+                <mat-icon *ngIf="sidenav.opened">close</mat-icon>
+            </button>
+
+            <span class="example-spacer"></span>
+
+            <button style="display: none;" class="btn-togle" mat-icon-button [matMenuTriggerFor]="menu">
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item>
+                    <button mat-menu-item>
+                        <mat-icon>exit_to_app</mat-icon>
+                        <span>Cerrar Sesión</span>
+                    </button>
+                </button>
+            </mat-menu>
+        </mat-toolbar>
+    </div>
+    <!---->
+    <mat-sidenav-container class="example-sidenav-container">
+        <mat-sidenav #sidenav style="width: 28%" mode="push" opened="false">
+            <mat-divider></mat-divider>
+            <button mat-menu-item (click)="sidenav.toggle()" [routerLink]="['home']" style="cursor: pointer">
+                <mat-icon>home</mat-icon>
+                <span>Menu Principal</span>
+            </button>
+            <!---->
+            <button mat-menu-item (click)="sidenav.toggle()" [routerLink]="['customer']" style="cursor: pointer">
+                <mat-icon>how_to_reg</mat-icon>
+                <span class="full-width" *ngIf="isExpanded || isShowing">Cliente</span>
+            </button>
+            <button mat-menu-item (click)="sidenav.toggle()" [routerLink]="['product']" style="cursor: pointer">
+                <mat-icon>how_to_reg</mat-icon>
+                <span class="full-width" *ngIf="isExpanded || isShowing">Producto</span>
+            </button>
+            <button mat-menu-item (click)="sidenav.toggle()" [routerLink]="['order']" style="cursor: pointer">
+                <mat-icon>remove_from_queue</mat-icon>
+                <span class="full-width" *ngIf="isExpanded || isShowing">Order</span>
+            </button>
+            <!---->
+        </mat-sidenav>
+
+        <mat-sidenav-content>
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+
+    </mat-sidenav-container>
+</div>

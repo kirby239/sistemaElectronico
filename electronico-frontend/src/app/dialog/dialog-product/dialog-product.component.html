@@ -1,0 +1,46 @@
+<form [formGroup]="productForm">
+    <div class="card">
+        <div class="card-header position-sticky sticky-top"
+            style="margin:0;background-color:lightsteelblue;top: -25px;">
+            <span style="float: left; margin-top: 10px;">{{modo +' producto'}}</span>
+            <button class=" btn btn-danger" style="align-items: flex-end;" (click)="cerrar()">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            @if(this.modo != 'view'){
+            <button (click)="save()" class=" btn btn-success" style="margin-right: 10px; align-items: flex-end;">
+                <i class="fas fa-save"></i>
+            </button>
+            }
+        </div>
+        <div class="card-body">
+            <div>
+                <div class="mb-4">
+                    <mat-form-field class="example-full-width w-100" [appearance]="'outline'">
+                        <mat-label>name</mat-label>
+                        <input type="text" matInput placeholder="Ingrese su name" formControlName="name">
+                        <mat-error>Please enter a name</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="mb-4">
+                    <mat-form-field class="example-full-width w-100" [appearance]="'outline'">
+                        <mat-label>description</mat-label>
+                        <input type="text" matInput placeholder="Ingrese su description" formControlName="description">
+                        <mat-error>Please enter a description</mat-error>
+
+                    </mat-form-field>
+                </div>
+                <mat-form-field class="example-full-width w-100" [appearance]="'outline'">
+                    <mat-label>price</mat-label>
+                    <input type="text" matInput placeholder="Ingrese su price" formControlName="price">
+                    <mat-error>Please enter a price</mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width w-100" [appearance]="'outline'">
+                    <mat-label>stock</mat-label>
+                    <input type="text" matInput placeholder="Ingrese su stock" formControlName="stock">
+                    <mat-error>Please enter a stock</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+</form>
