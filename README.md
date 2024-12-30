@@ -16,10 +16,6 @@ Este proyecto es una aplicación web de un examen de analista full-stack desarro
 - **6. Validar entradas de usuario.**
 - **7. Escribir tests unitarios para el código desarrollado.**
 - **8. Docker**
-- **Registro de Usuarios**: Permite a los usuarios crear una cuenta.
-- **Inicio de Sesión**: Autentica a los usuarios mediante un sistema seguro basado en tokens.
-- **Gestión de Tokens**: Generación y validación de JWT (JSON Web Token) para sesiones.
-- **Recuperación de Contraseña**: Envío de correos electrónicos para restablecer la contraseña utilizando **Nodemailer**.
 ---
 
 ## Tecnologías Utilizadas
