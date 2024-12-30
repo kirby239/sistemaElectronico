@@ -53,8 +53,8 @@ Este proyecto es una aplicación web de un examen de analista full-stack desarro
 }
 ```
 ### Customer
-**URL:** `GET http://localhost:8080/api/customer/list`
-**URL:** `POST http://localhost:8080/api/customer/list`
+- **URL:** `GET http://localhost:8080/api/customer/list`
+- **URL:** `POST http://localhost:8080/api/customer/list`
 
 **Body:**
 ```json
@@ -66,11 +66,11 @@ Este proyecto es una aplicación web de un examen de analista full-stack desarro
 
 ### Order/Pedido
 
-**URL:** `POST http://localhost:8080/api/orders/save`
-**URL:** `PUT http://localhost:8080/api/orders/{id}`
-**URL:** `GET http://localhost:8080/api/orders/list/order`
-**URL:** `GET http://localhost:8080/api/orders/customer/{customerid}`
-**URL:** `DELETE http://localhost:8080/api/orders/{id}`
+- **URL:** `POST http://localhost:8080/api/orders/save`
+- **URL:** `PUT http://localhost:8080/api/orders/{id}`
+- **URL:** `GET http://localhost:8080/api/orders/list/order`
+- **URL:** `GET http://localhost:8080/api/orders/customer/{customerid}`
+- **URL:** `DELETE http://localhost:8080/api/orders/{id}`
 
 **Body:**
 ```json
