@@ -1,0 +1,37 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongo
+      - postgres
+    environment:
+      - SPRING_DATA_MONGODB_URI=mongodb://mongo:27017/electronico
+      - SPRING_R2DBC_URL=r2dbc:postgresql://postgres:5432/electronico
+      - SPRING_R2DBC_USERNAME=postgres
+      - SPRING_R2DBC_PASSWORD=123456
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+
+  mongo:
+    image: mongo:latest
+    restart: always
+    container_name: electro-mongo
+    hostname: host-mongodb
+    ports:
+      - "27017:27017"
+
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: electronico
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+volumes:
+  postgres-data:
