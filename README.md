@@ -1,6 +1,6 @@
 # Aplicación de Autenticación con roles y CRUD con Angular y Node.js
 
-Este proyecto es una aplicación web de un examen de analista full-stack desarrollada con **Angular 18** en el frontend , **Node.js 18** en el backend , **Postgresql 16** y **Postgresql 16** con **Docker**. Incluye funcionalidades esenciales como  crear, leer, actualizar y eliminar pedidos, así como listar todos los
+Este proyecto es una aplicación web de un examen de analista full-stack desarrollada con **Angular 18** en el frontend , **Node.js 18** en el backend , **Postgresql 16** y **Mongo DB ** con **Docker**. Incluye funcionalidades esenciales como  crear, leer, actualizar y eliminar pedidos, así como listar todos los
  pedidos y obtener detalles de un pedido específico. Un pedido tiene un cliente, una lista de
  productos y un total. 
 ---
@@ -20,11 +20,6 @@ Este proyecto es una aplicación web de un examen de analista full-stack desarro
 - **Inicio de Sesión**: Autentica a los usuarios mediante un sistema seguro basado en tokens.
 - **Gestión de Tokens**: Generación y validación de JWT (JSON Web Token) para sesiones.
 - **Recuperación de Contraseña**: Envío de correos electrónicos para restablecer la contraseña utilizando **Nodemailer**.
-
-### CRUD
-- Operaciones de **Crear, Listar, Visualizar ,Actualizar y Eliminar** datos de los usuarios esto se aplica para el rol **SuperAdmin** y solo **Listar,Visualizar** para el rol de **User** .
-- Gestión de perfiles de usuario a través de una API segura controlado los errores con sus repetivo estatus.
-
 ---
 
 ## Tecnologías Utilizadas
@@ -35,38 +30,61 @@ Este proyecto es una aplicación web de un examen de analista full-stack desarro
 - **Bootstrap CSS** (opcional): Para personalizar estilos.
 
 ### Backend
-- **Node.js 18**: Ejecución del servidor.
-- **Express.js**: Framework para enrutamiento y middleware.
-- **Nodemailer**: Servicio de correos electrónicos para recuperación de contraseñas.
-- **JSON Web Token (JWT)**: Autenticación segura basada en tokens.
-- **PostgreSQL** (o cualquier base de datos): Persistencia de datos.
+- **JAVA 17**: Ejecución del servidor.
+- **Spring boot**: Framework de java.
+- **WebFlux,R2BC y Reactor**: reactivo .
+- **PostgreSQL y MongoDB** : Persistencia de datos.
 
 ---
 
 ## API Endpoints
 
-### Login
-
-**URL:** `POST http://localhost:3000/auth/login`
+### Product
+**URL:** `GET http://localhost:8080/api/product/list`
+**URL:** `POST http://localhost:8080/api/product/save`
 
 **Body:**
 ```json
 {
-    "username": "superadmin",
-    "password": "superadmin"
+    "name":"kirby",
+    "description":"hecho el lima",
+    "price":10,   
+    "stock":20
+}
+```
+### Customer
+**URL:** `GET http://localhost:8080/api/customer/list`
+**URL:** `POST http://localhost:8080/api/customer/list`
+
+**Body:**
+```json
+{
+    "name":"kirby",
+    "email":"kirby@gmail.com
 }
 ```
 
-### Register
+### Order/Pedido
 
-**URL:** `POST http://localhost:3000/auth/register`
+**URL:** `POST http://localhost:8080/api/orders/save`
+**URL:** `PUT http://localhost:8080/api/orders/{id}`
+**URL:** `GET http://localhost:8080/api/orders/list/order`
+**URL:** `GET http://localhost:8080/api/orders/customer/{customerid}`
+**URL:** `DELETE http://localhost:8080/api/orders/{id}`
 
 **Body:**
 ```json
 {
-    "username": "example",
-    "password": "example"
-    "email":"example@gmail.com",
-    "name":"exampl"
+    "customerId": 1,
+    "items": [
+        {
+            "productId": 1,
+            "quantity": 4,
+            "price": 40,
+            "subtotal": 40
+        }
+    ],
+    "total": 40,
+    "status": "COMPLETED"
 }
 ```
