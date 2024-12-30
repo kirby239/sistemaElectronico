@@ -1,0 +1,4 @@
+com\sistema\electronico_backend\service\OrderServiceTest.class
+com\sistema\electronico_backend\ElectronicoBackendApplicationTests.class
+com\sistema\electronico_backend\service\CustomerServiceTest.class
+com\sistema\electronico_backend\service\ProductServiceTest.class
