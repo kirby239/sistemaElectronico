@@ -1,6 +1,6 @@
-# Aplicación de Autenticación con roles y CRUD con Angular y Node.js
+# Aplicación de Full stack con Angular y Java
 
-Este proyecto es una aplicación web de un examen de analista full-stack desarrollada con **Angular 18** en el frontend , **Node.js 18** en el backend , **Postgresql 16** y **Mongo DB ** con **Docker**. Incluye funcionalidades esenciales como  crear, leer, actualizar y eliminar pedidos, así como listar todos los
+Este proyecto es una aplicación web de un examen de analista full-stack desarrollada con **Angular 18** en el frontend , **Java 18** en el backend , **Postgresql 16** y **Mongo DB ** con **Docker**. Incluye funcionalidades esenciales como  crear, leer, actualizar y eliminar pedidos, así como listar todos los
  pedidos y obtener detalles de un pedido específico. Un pedido tiene un cliente, una lista de
  productos y un total. 
 ---
