@@ -40,8 +40,8 @@ Este proyecto es una aplicación web de un examen de analista full-stack desarro
 ## API Endpoints
 
 ### Product
-**URL:** `GET http://localhost:8080/api/product/list`
-**URL:** `POST http://localhost:8080/api/product/save`
+- **URL:** `GET http://localhost:8080/api/product/list`
+- **URL:** `POST http://localhost:8080/api/product/save`
 
 **Body:**
 ```json
