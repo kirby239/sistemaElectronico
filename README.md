@@ -1,7 +1,8 @@
 # Aplicación de Autenticación con roles y CRUD con Angular y Node.js
 
-Este proyecto es una aplicación web full-stack desarrollada con **Angular 18** en el frontend , **Node.js 18** en el backend y **Postgresql 16**. Incluye funcionalidades esenciales como autenticación de usuarios (registro, inicio de sesión, recuperación de contraseña vía correo electrónico) y un CRUD para gestionar datos de los usuarios.
-
+Este proyecto es una aplicación web de un examen de analista full-stack desarrollada con **Angular 18** en el frontend , **Node.js 18** en el backend , **Postgresql 16** y **Postgresql 16** con **Docker**. Incluye funcionalidades esenciales como  crear, leer, actualizar y eliminar pedidos, así como listar todos los
+ pedidos y obtener detalles de un pedido específico. Un pedido tiene un cliente, una lista de
+ productos y un total. 
 ---
 
 ## Funcionalidades
